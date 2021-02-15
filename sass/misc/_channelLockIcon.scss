@@ -1,0 +1,8 @@
+.channelLockIcon {
+  @include border-radius(1000px);
+  @include user-select(none);
+
+  background-color: $c-primary-200;
+  color: $c-primary-600;
+  // border: 1px solid $c-gray-600;
+}

@@ -1,0 +1,24 @@
+.editProfile {
+  .editProfile-title {
+    margin: 0;
+
+    > h1 {
+      font-size: 28px;
+    }
+
+    > span {
+      color: $c-dark-50;
+    }
+  }
+  .editProfile-topLinks {
+    width: 100%;
+    margin-bottom: $top-padding-default;
+  }
+  .editProfile-mainInfo {
+    width: 100%;
+    .editProfile-name,
+    .editProfile-bio {
+      width: 100%;
+    }
+  }
+}

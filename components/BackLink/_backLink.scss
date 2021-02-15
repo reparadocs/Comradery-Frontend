@@ -1,0 +1,13 @@
+.backLink {
+  @include transition(all, $transition-default);
+  @include user-select(none);
+  font-weight: 500;
+  color: $c-dark-50;
+  &:hover {
+    cursor: pointer;
+    color: $c-dark-100;
+  }
+  &:active {
+    opacity: .85;
+  }
+}

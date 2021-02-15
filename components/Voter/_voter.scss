@@ -1,0 +1,32 @@
+.voter {
+  @include transition(all, $transition-default);
+  @include user-select(none);
+  @include border-radius(1000px);
+
+  height: 28px;
+
+  padding-left: 12px;
+  padding-right: 12px;
+
+  color: $c-gray-500;
+  background-color: $c-gray-200;
+
+
+  > svg {
+    margin-left: 8px;
+    height: 12px;
+    fill: currentColor;
+    width: 12px;
+    > path {
+      // @include transition(all, $transition-default);
+    }
+  }
+  &:hover {
+    cursor: pointer;
+    opacity: 0.75;
+  }
+  &.voted {
+    color: white;
+    background-color: $c-primary-600;
+  }
+}

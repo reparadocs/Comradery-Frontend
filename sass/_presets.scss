@@ -1,0 +1,416 @@
+@keyframes spin {
+  from {
+    -webkit-transform: rotate(0deg);
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes spin {
+  from {
+    opacity: 0;
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: rotate(360deg);
+  }
+}
+@-moz-keyframes spin {
+  from {
+    opacity: 0;
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes fadeInOpacity {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes fadeInOpacity {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-moz-keyframes fadeInOpacity {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+// adds browser support for removing ability to select text
+@mixin user-select($what: none) {
+  -webkit-user-select: $what;
+  -moz-user-select: $what;
+  -ms-user-select: $what;
+  -o-user-select: $what;
+  user-select: $what;
+}
+
+// adds browser support for transitions
+@mixin transition($what: all, $time: 0.2s) {
+  -webkit-transition: $what $time;
+  -moz-transition: $what $time;
+  -ms-transition: $what $time;
+  -o-transition: $what $time;
+  transition: $what $time;
+}
+
+@mixin defaultMargins(
+  $optionalExcludePaddingOnMobile: false,
+  $optionalSwapPadding: false
+) {
+  // adds the proper margins automatically
+  @if ($optionalSwapPadding == false) {
+    width: calc(100% - #{$post-mp} * 2);
+    margin-left: $post-mp;
+    margin-right: $post-mp;
+  } @else {
+    width: 100%;
+    padding-left: $post-mp;
+    padding-right: $post-mp;
+  }
+  @include mobile {
+    @if ($optionalExcludePaddingOnMobile == true) {
+      width: calc(100%);
+      @if ($optionalSwapPadding == false) {
+        margin-left: 0;
+        margin-right: 0;
+      } @else {
+        padding-left: 0;
+        padding-right: 0;
+      }
+    } @else {
+      @if ($optionalSwapPadding == false) {
+        width: calc(100% - #{$post-mp-mobile} * 2);
+        margin-left: $post-mp-mobile;
+        margin-right: $post-mp-mobile;
+      } @else {
+        width: 100%;
+        padding-left: $post-mp-mobile;
+        padding-right: $post-mp-mobile;
+      }
+    }
+  }
+}
+
+@mixin tabletandmobile {
+  @media (max-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media (max-width: 767px) {
+    @content;
+  }
+}
+
+// Border Radius
+@mixin border-radius($value) {
+  -webkit-border-radius: $value;
+  -khtml-border-radius: $value;
+  -moz-border-radius: $value;
+  border-radius: $value;
+}
+
+// Flexbox presets
+@mixin flexbox {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+@mixin flex-direction($value: row) {
+  @if $value == row-reverse {
+    -webkit-box-direction: reverse;
+    -webkit-box-orient: horizontal;
+    -moz-box-direction: reverse;
+    -moz-box-orient: horizontal;
+  } @else if $value == column {
+    -webkit-box-direction: normal;
+    -webkit-box-orient: vertical;
+    -moz-box-direction: normal;
+    -moz-box-orient: vertical;
+  } @else if $value == column-reverse {
+    -webkit-box-direction: reverse;
+    -webkit-box-orient: vertical;
+    -moz-box-direction: reverse;
+    -moz-box-orient: vertical;
+  } @else {
+    -webkit-box-direction: normal;
+    -webkit-box-orient: horizontal;
+    -moz-box-direction: normal;
+    -moz-box-orient: horizontal;
+  }
+  -webkit-flex-direction: $value;
+  -ms-flex-direction: $value;
+  flex-direction: $value;
+}
+@mixin flex-wrap($value: nowrap) {
+  // No Webkit/FF Box fallback.
+  -webkit-flex-wrap: $value;
+  @if $value == nowrap {
+    -ms-flex-wrap: none;
+  } @else {
+    -ms-flex-wrap: $value;
+  }
+  flex-wrap: $value;
+}
+@mixin justify-content($value: flex-start) {
+  @if $value == flex-start {
+    -webkit-box-pack: start;
+    -moz-box-pack: start;
+    -ms-flex-pack: start;
+  } @else if $value == flex-end {
+    -webkit-box-pack: end;
+    -moz-box-pack: end;
+    -ms-flex-pack: end;
+  } @else if $value == space-between {
+    -webkit-box-pack: justify;
+    -moz-box-pack: justify;
+    -ms-flex-pack: justify;
+  } @else if $value == space-around {
+    -ms-flex-pack: distribute;
+  } @else {
+    -webkit-box-pack: $value;
+    -moz-box-pack: $value;
+    -ms-flex-pack: $value;
+  }
+  -webkit-justify-content: $value;
+  justify-content: $value;
+}
+@mixin align-items($value: stretch) {
+  @if $value == flex-start {
+    -webkit-box-align: start;
+    -moz-box-align: start;
+    -ms-flex-align: start;
+  } @else if $value == flex-end {
+    -webkit-box-align: end;
+    -moz-box-align: end;
+    -ms-flex-align: end;
+  } @else {
+    -webkit-box-align: $value;
+    -moz-box-align: $value;
+    -ms-flex-align: $value;
+  }
+  -webkit-align-items: $value;
+  align-items: $value;
+}
+
+.max {
+  &-w {
+    width: 100%;
+  }
+  &-h {
+    height: 100%;
+  }
+  &-vh {
+    height: 100vh;
+  }
+  &-vw {
+    width: 100vw;
+  }
+}
+.col {
+  @include flexbox;
+  @include flex-direction(column);
+  @include justify-content(flex-start);
+  @include align-items(flex-start);
+}
+.col-fs-c {
+  @include flexbox;
+  @include flex-direction(column);
+  @include justify-content(flex-start);
+  @include align-items(center);
+}
+.col-c,
+.col-c-fs {
+  @include flexbox;
+  @include flex-direction(column);
+  @include justify-content(center);
+  @include align-items(flex-start);
+}
+.col-c-c {
+  @include flexbox;
+  @include flex-direction(column);
+  @include justify-content(center);
+  @include align-items(center);
+}
+.col-sa-fs,
+.col-sa {
+  @include flexbox;
+  @include flex-direction(column);
+  @include justify-content(space-around);
+  @include align-items(flex-start);
+}
+.col-sa-c {
+  @include flexbox;
+  @include flex-direction(column);
+  @include justify-content(space-around);
+  @include align-items(center);
+}
+.col-sb-fs,
+.col-sb {
+  @include flexbox;
+  @include flex-direction(column);
+  @include justify-content(space-between);
+  @include align-items(flex-start);
+}
+.col-sb-c {
+  @include flexbox;
+  @include flex-direction(column);
+  @include justify-content(space-between);
+  @include align-items(center);
+}
+.col-se-fs,
+.col-se {
+  @include flexbox;
+  @include flex-direction(column);
+  @include justify-content(space-evenly);
+  @include align-items(flex-start);
+}
+.col-se-c {
+  @include flexbox;
+  @include flex-direction(column);
+  @include justify-content(space-evenly);
+  @include align-items(center);
+}
+.col-fe-fs,
+.col-fe {
+  @include flexbox;
+  @include flex-direction(column);
+  @include justify-content(flex-end);
+  @include align-items(flex-start);
+}
+.col-fe-c {
+  @include flexbox;
+  @include flex-direction(column);
+  @include justify-content(flex-end);
+  @include align-items(center);
+}
+.col-c-fe {
+  @include flexbox;
+  @include flex-direction(column);
+  @include align-items(flex-end);
+  @include justify-content(center);
+}
+.col-fs-fe {
+  @include flexbox;
+  @include flex-direction(column);
+  @include justify-content(flex-start);
+  @include align-items(flex-end);
+}
+
+.row {
+  @include flexbox;
+  @include flex-direction(row);
+  @include justify-content(flex-start);
+  @include align-items(flex-start);
+}
+.row-c-fs,
+.row-c {
+  @include flexbox;
+  @include flex-direction(row);
+  @include justify-content(center);
+  @include align-items(flex-start);
+}
+.row-c-c {
+  @include flexbox;
+  @include flex-direction(row);
+  @include justify-content(center);
+  @include align-items(center);
+}
+.row-fs-c {
+  @include flexbox;
+  @include flex-direction(row);
+  @include justify-content(flex-start);
+  @include align-items(center);
+}
+.row-sa-fs,
+.row-sa {
+  @include flexbox;
+  @include flex-direction(row);
+  @include justify-content(space-around);
+  @include align-items(flex-start);
+}
+.row-sa-c {
+  @include flexbox;
+  @include flex-direction(row);
+  @include justify-content(space-around);
+  @include align-items(center);
+}
+.row-sb-fs,
+.row-sb {
+  @include flexbox;
+  @include flex-direction(row);
+  @include justify-content(space-between);
+  @include align-items(flex-start);
+}
+.row-sb-c {
+  @include flexbox;
+  @include flex-direction(row);
+  @include justify-content(space-between);
+  @include align-items(center);
+}
+.row-sb-fe {
+  @include flexbox;
+  @include flex-direction(row);
+  @include justify-content(space-between);
+  @include align-items(flex-end);
+}
+.row-se-fs,
+.row-se {
+  @include flexbox;
+  @include flex-direction(row);
+  @include justify-content(space-evenly);
+  @include align-items(flex-start);
+}
+.row-se-c {
+  @include flexbox;
+  @include flex-direction(row);
+  @include justify-content(space-evenly);
+  @include align-items(center);
+}
+.row-fe-fs,
+.row-fe {
+  @include flexbox;
+  @include flex-direction(row);
+  @include justify-content(flex-end);
+  @include align-items(flex-start);
+}
+.row-fe-c {
+  @include flexbox;
+  @include flex-direction(row);
+  @include justify-content(flex-end);
+  @include align-items(center);
+}
+.desktop-only {
+  display: block;
+  @include mobile {
+    display: none;
+  }
+}
+.mobile-only {
+  display: none;
+  @include mobile {
+    display: block;
+  }
+}

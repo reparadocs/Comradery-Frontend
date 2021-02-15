@@ -1,0 +1,54 @@
+// Misc Layout
+$post-mp: 28px; // the width of the margins in the feed
+$post-mp-mobile: 16px;
+$top-padding-default: 28px;
+$bottom-padding-default: calc(#{$top-padding-default} * 2);
+$transition-default: 200ms;
+$inputs-bg-unfocused: $c-sidebar-bg;
+$inputs-bg-focused: transparent;
+$buttons-active-bg: $c-primary;
+$buttons-neutral-bg: $c-dark-100;
+$buttons-active-text: white;
+$buttons-neutral-text: white;
+
+// Sidebar
+$sidebar-bg: linear-gradient($c-gray-700, $c-gray-800);
+$sidebar-default-padding: 16px; // the width of the margins in the sidebar
+$sidebar-default-itemHeight: 36px; // the height of everything in the sidebar except the "new post" button, labels, and "show more" button
+$sidebar-default-width: 248px;
+$sidebar-text: $c-dark-75;
+$sidebar-label-text: $c-gray-400;
+$sidebar-label-bg: $c-gray-700;
+$sidebar-newpostbtn: linear-gradient(
+  to top right,
+  $c-primary-600,
+  $c-primary-500
+);
+$sidebar-newpostbtn-text: $c-primary-100;
+$sidebar-item-hover-bg: rgba(58, 91, 121, 0.35); // $c-gray-600 at 35% opacity
+$sidebar-unreadsIcon-text: $c-alt-100;
+$sidebar-unreadsIcon-bg: $c-alt-600;
+$sidebar-activeitem-bg: rgba(58, 91, 121, 0.5); // $c-gray-600 at 50% opacity
+$sidebar-activeitem-text: $c-primary-100;
+
+// Navbar
+$navbar-default-height: 88px;
+$navbar-search-height: 36px;
+$navbar-accountdisplay-height: 36px;
+
+// Mobile Nav
+$mobile-nav-bottom-height: 64px;
+
+// Z indexes
+$zi-sidebar: 100;
+$zi-navbar: 99;
+$zi-content: 1;
+
+// chat
+$chat-composer-bg: #F0F7FC;
+$chat-space-btwn-msgs: 36px;
+$chatbox-composer-height: 80px;
+$chat-title-height: 80px;
+
+// profile
+$profile-horiz-margins: calc(2vw + 28px);

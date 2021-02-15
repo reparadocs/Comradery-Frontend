@@ -1,0 +1,7 @@
+.sortField {
+  &--drop > div > button {
+    color: $c-primary-600;
+    font-weight: 600;
+    text-transform: capitalize;
+  }
+}

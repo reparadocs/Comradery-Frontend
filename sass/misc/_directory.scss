@@ -1,0 +1,141 @@
+.directory {
+  position: relative;
+  width: 100%;
+  .directory-top {
+    width: 100%;
+    padding-left: 24px;
+    padding-right: 24px;
+    margin-bottom: 16px;
+
+    @include mobile {
+      padding-left: 16px;
+      padding-right: 16px;
+    }
+
+    > span {
+      font-size: 28px;
+      font-weight: 700;
+      color: $c-gray-700;
+    }
+  }
+  .directory-list {
+    width: 100%;
+    @include flex-wrap(wrap);
+    padding-left: 0;
+    padding-right: 0;
+    display: grid;
+    grid-gap: 24px;
+    grid-template-columns: repeat(3, 1fr);
+
+    @include mobile {
+      padding-left: 16px;
+      padding-right: 16px;
+      grid-gap: 16px;
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  .directory-entry {
+    @include border-radius(8px);
+    @include user-select(none);
+    @include transition(all, $transition-default);
+    position: relative;
+    background-color: white;
+    overflow: hidden;
+
+    border: 1px solid rgba(32, 59, 84, 0.15);
+    box-shadow: 0 4px 12px 0 rgba(32, 59, 84, 0.05);
+    box-sizing: border-box;
+
+    &:hover {
+      cursor: pointer;
+      border: 1px solid rgba(32, 59, 84, 0.35);
+      box-shadow: 0 4px 16px 0 rgba(32, 59, 84, 0.1);
+      .top {
+        box-shadow: 0 1px 0 0 rgba(32, 59, 84, 0.1);
+      }
+      .bottom > div {
+        height: 16px;
+        opacity: 1;
+      }
+    }
+
+    .directory-photo {
+      height: 100% !important;
+      width: 100% !important;
+      min-height: 48px;
+      min-width: 48px;
+      @include border-radius(0);
+    }
+
+    .top,
+    .bottom {
+      width: 100%;
+    }
+
+    .top {
+      @include transition(all, $transition-default);
+      overflow: hidden;
+      position: relative;
+      padding-top: 100%;
+      box-shadow: 0 1px 0 0 rgba(32, 59, 84, 0.05);
+      .top-in {
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        position: absolute;
+        > div {
+          height: 100%;
+          width: 100%;
+          > div > div {
+            font-size: 5vw !important;
+            @include mobile {
+              font-size: 10vw !important;
+            }
+          }
+        }
+      }
+    }
+
+    .bottom {
+      height: 80px;
+      font-weight: 600;
+      > span {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        line-height: 20px;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 1; /* number of lines to show */
+        margin-left: 12px;
+        margin-right: 12px;
+        text-align: center;
+        width: calc(100% - 24px);
+      }
+      > div {
+        @include transition(all, $transition-default);
+        height: 0;
+        opacity: 0;
+
+        font-size: 12px;
+        font-weight: 600;
+        color: $c-primary-600;
+
+        > span {
+          font-family: --apple-system;
+        }
+      }
+    }
+
+    @include mobile {
+      width: 100%;
+      margin: 0;
+      .top {
+        height: 188px;
+      }
+      .bottom {
+        height: 64px;
+      }
+    }
+  }
+}

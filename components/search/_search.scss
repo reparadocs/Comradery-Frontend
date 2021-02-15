@@ -1,0 +1,99 @@
+.searchBar {
+  @include border-radius(1000px);
+  @include transition(all $transition-default);
+  @include user-select(none);
+
+  @include flexbox;
+  @include flex-direction(row-reverse);
+  @include justify-content(flex-start);
+  @include align-items(center);
+
+  height: 36px;
+  padding-left: 12px;
+  padding-right: 12px;
+  margin-right: 20px;
+
+  background-color: #ebf3fb;
+  flex: 1;
+  > input,
+  path {
+    @include transition(all, $transition-default);
+  }
+  > input {
+    margin-left: 4px;
+    width: calc(100% - 30px);
+    background-color: transparent;
+    outline: none;
+
+    color: $c-gray-700;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 36px;
+
+    &::placeholder {
+      color: $c-gray-400;
+    }
+
+    &:focus {
+      + svg {
+        path {
+          fill: $c-gray-700;
+        }
+      }
+    }
+  }
+
+  > svg {
+    // height: 18px;
+    // width: 18px;
+    path {
+      fill: $c-gray-400;
+    }
+  }
+
+  &.onSearchPage {
+    width: 100%;
+    margin-right: 0;
+    font-size: 16px;
+    margin-top: 24px;
+    margin-bottom: 24px;
+    font-weight: 500;
+  }
+}
+
+.post-search {
+  width: 60vw;
+
+  @include mobile {
+    width: 100%;
+  }
+}
+
+.searchContainer {
+  @include mobile {
+    margin-right: 16px;
+    margin-left: 16px;
+  }
+
+  .searchLabel {
+    // @include defaultMargins;
+    font-size: 24px;
+    margin-bottom: 16px;
+  }
+}
+.personHit {
+  @include mobile {
+    margin-left: $post-mp-mobile;
+    margin-right: $post-mp-mobile;
+  }
+  margin-left: $post-mp;
+  margin-right: $post-mp;
+
+  margin-top: 16px;
+  margin-bottom: 16px;
+  height: 280px;
+}
+
+.bg-normal {
+  background-color: $c-gray-100;
+}

@@ -1,0 +1,6 @@
+[auth]
+token=9256fbcb76d147ac8c9b4194e46e4be3e5d9accdc5f44df7a7a9bd7fcb4a20b7
+
+[defaults]
+org=trestle-r0
+project=comradery-frontend

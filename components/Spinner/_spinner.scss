@@ -1,0 +1,16 @@
+.spinner {
+  @include transition(all, 400ms);
+  @include border-radius(100px);
+  width: 36px;
+  height: 36px;
+  border: 2px solid $c-dark-75;
+  background-color: transparent !important;
+  border-top-color: $c-dark-25;
+  border-left-color: $c-dark-25;
+
+  animation: spin 1s ease-in-out infinite, fadeInOpacity 500ms, appear 500ms;
+  -webkit-animation: spin 1s ease-in-out infinite, fadeInOpacity 500ms,
+    appear 500ms;
+  -moz-animation: spin 1s ease-in-out infinite, fadeInOpacity 500ms,
+    appear 500ms;
+}

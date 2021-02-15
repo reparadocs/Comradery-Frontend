@@ -1,0 +1,59 @@
+@import 'colors', 'presets', 'variables', 'layout'; // don't change the order of these
+@import 'components/Sidebar/sidebarMain';
+@import 'components/PostCard/postcard';
+@import 'components/Voter/voter';
+@import 'components/CommentEditor/commentEditor';
+@import 'components/Comment/comment';
+@import 'components/MobileBottomNav/mobileBottomNav';
+@import 'components/Common/common';
+@import 'components/PostEditor/postEditor';
+@import 'components/BackLink/backLink';
+@import 'components/Spinner/spinner';
+@import 'components/ChatBox/chatBox';
+@import 'components/search/search';
+@import 'components/Header/header';
+@import 'components/AccountDropdown/accountdropdown';
+
+@import 'components/Callout/callout';
+@import 'misc/index';
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  overscroll-behavior: none;
+}
+
+body {
+  font-family: proxima-nova, -apple-system, 'BlinkMacSystemFont', 'Segoe UI',
+    'Roboto', 'Helvetica Neue', Arial, 'Noto Sans', sans-serif,
+    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  font-size: 16px;
+
+  font-weight: 400;
+  color: $c-gray-800;
+  background-color: #f9fcff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+}
+
+h3 {
+  // use for post titles
+  font-size: #{'min(calc(0.5vw + 16px), 22px)'};
+  font-weight: 600;
+  line-height: 30px;
+}
+
+.a-highlight {
+  height: 400px;
+
+  @include mobile {
+    height: 700px;
+  }
+
+  a {
+    color: #15c;
+    text-decoration: underline;
+  }
+}

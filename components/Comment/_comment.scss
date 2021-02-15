@@ -1,0 +1,124 @@
+.com {
+  // border-left: 1px solid $c-gray-300;
+
+  display: grid;
+  grid-template-columns: 28px 1fr;
+  grid-column-gap: 8px;
+
+  margin-top: 28px;
+  /*
+  &:not(.hasChildren) {
+    .com--border {
+      display: none;
+    }
+  }*/
+
+  .com--top {
+    font-size: 14px;
+    font-weight: 600;
+    color: $c-gray-400;
+  }
+  .com--name,
+  .com--time {
+    margin: 0;
+    padding: 0;
+  }
+  .com--name {
+    @include transition(all, $transition-default);
+    color: $c-gray-600;
+  }
+  .com--time {
+    font-size: 12px;
+    font-weight: 400;
+    margin-top: -4px;
+  }
+  .com--userPhoto,
+  .com--border {
+    @include border-radius(1000px);
+  }
+  .com--userPhoto {
+    height: 28px;
+    width: 28px;
+  }
+  .com--border {
+    width: 1px;
+    height: 100%;
+    margin-top: 12px;
+
+    background-color: $c-gray-300;
+  }
+  .com--text {
+    line-height: 24px;
+    font-size: 16px;
+    color: $c-gray-600;
+
+    margin-top: 4px;
+    margin-bottom: 8px;
+  }
+  .com--reply {
+    @include transition(all, $transition-default);
+    @include user-select(none);
+    @include border-radius(1000px);
+
+    padding-left: 12px;
+    padding-right: 12px;
+    height: 28px;
+
+    font-size: 14px;
+    font-weight: 600;
+    color: $c-gray-500;
+    background-color: $c-gray-200;
+
+    > svg {
+      margin-left: 8px;
+      height: 12px;
+      fill: currentColor;
+      width: 12px;
+    }
+
+    &:hover {
+      opacity: 0.75;
+      cursor: pointer;
+    }
+  }
+}
+
+.commentContainer {
+  // @include defaultMargins;
+  margin-bottom: 1em;
+}
+
+.commentChild {
+  @include transition(all, $transition-default);
+  @include border-radius(4px);
+  // padding: 12px;
+  // background-color: $c-gray-200;
+}
+
+.commentEditor-editor.light {
+  background-color: white;
+}
+
+.commentMargin {
+  width: 100%;
+  position: relative;
+}
+
+.commentMetaData {
+  color: $c-dark-75;
+  margin-bottom: 4px;
+  * {
+    margin: 0;
+  }
+  .bullet {
+    display: none;
+  }
+  .time {
+    margin-top: -2px;
+    color: $c-dark-50;
+  }
+}
+
+.commentFooter {
+  @include flex-wrap(wrap);
+}

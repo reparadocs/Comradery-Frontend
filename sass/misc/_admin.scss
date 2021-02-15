@@ -1,0 +1,97 @@
+.admin {
+  .admin-topInfo {
+    a {
+      @include transition(all, $transition-default);
+      @include border-radius(4px);
+      @include user-select(none);
+
+      padding-left: 8px;
+      padding-right: 8px;
+
+      font-weight: 500;
+      color: $c-dark-100;
+      background-color: white;
+      font-size: 14px;
+      height: 36px;
+      box-shadow: 0 2px 6px 0 $c-dark-5;
+      border: 1px solid $c-dark-10;
+      > span {
+        @include transition(all, $transition-default);
+        width: 0;
+        overflow: hidden;
+        font-family: 'Open Sans';
+        font-size: 12px;
+        margin-left: 0;
+      }
+      &:hover {
+        cursor: pointer;
+        box-shadow: 0 2px 6px 0 $c-dark-10;
+        background-color: $c-dark-3;
+        > span {
+          width: 12px;
+          margin-left: 4px;
+        }
+      }
+      &:active {
+        background-color: $c-dark-5;
+      }
+    }
+  }
+
+  .admin-nav {
+    width: 100%;
+    max-width: 100vw;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    font-weight: 500;
+    font-size: 14px;
+
+    border-bottom: 1px solid $c-dark-10;
+    overflow-x: auto;
+
+    .admin-nav-item {
+      @include user-select(none);
+      @include transition(all, $transition-default);
+      @include border-radius(4px);
+
+      height: 28px;
+      color: $c-dark-50;
+      padding-left: 8px;
+      padding-right: 8px;
+      background-color: $c-dark-5;
+      margin-right: 8px;
+
+      &.selected {
+        pointer-events: none;
+        background-color: $c-dark-100;
+        color: white;
+      }
+
+      &:hover {
+        cursor: pointer;
+        background-color: $c-dark-10;
+      }
+    }
+  }
+
+  .admin-inner {
+    width: 100%;
+    .group {
+      @include transition(all, $transition-default);
+      @include border-radius(4px);
+
+      width: 100%;
+      padding: 16px;
+      border: 1px solid $c-dark-5;
+      background-color: $c-dark-3;
+    }
+  }
+
+  button {
+    background-color: $c-dark-100;
+  }
+}
+
+tr:hover {
+  background-color: 'red';
+}

@@ -1,0 +1,18 @@
+.pageLoading {
+  > div {
+    @include transition(all, 400ms);
+    @include border-radius(100px);
+    width: 48px;
+    height: 48px;
+    border: 8px solid #B6F4FF;
+    border-top-color: #18D9FE;
+    border-right-color: #17AAFD;
+    border-bottom-color: #1766FC;
+    position: absolute;
+    margin: 0 auto;
+
+    animation: spin 1s ease-in-out alternate infinite;
+    -webkit-animation: spin 1s ease-in-out alternate infinite;
+    -moz-animation: spin 1s ease-in-out alternate infinite;
+  }
+}

@@ -1,0 +1,9 @@
+.postPage {
+  > .postCard.onPostPage {
+    @include border-radius(0);
+    margin-bottom: 12px;
+    @include mobile {
+      margin-bottom: 16px;
+    }
+  }
+}

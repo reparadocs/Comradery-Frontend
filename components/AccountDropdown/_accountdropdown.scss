@@ -1,0 +1,73 @@
+.accountDropdown {
+  .accountDropdown-displayArea,
+  .dropMenu {
+    @include user-select(none);
+    @include transition(all, $transition-default);
+  }
+  .accountDropdown-displayArea {
+    background-color: transparent;
+    @include border-radius(1000px);
+    height: 36px;
+    width: 36px;
+    // border: 1px solid $c-gray-400;
+    box-shadow: 0px 2px 4px rgba(32, 59, 84, 0.2);
+    box-sizing: content-box;
+    overflow: hidden;
+    .accountDropdown-username {
+      margin-left: 4px;
+      margin-right: 4px;
+    }
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  .dropMenu {
+    @include border-radius(4px);
+    position: absolute;
+    margin-top: 12px;
+    right: 0;
+    z-index: 10;
+    overflow: hidden;
+
+    box-shadow: 0 4px 24px 0 rgba(35,61,77,.20);
+    border: 1px solid rgba(35,61,77,.10);
+    background-color: white;
+    color: $c-gray-400;
+    min-width: 212px;
+    .dropMenu-name {
+      width: calc(100% - 24px);
+      margin-left: 12px;
+      margin-right: 12px;
+      height: 42px;
+      color: $c-gray-600;
+      font-weight: 600;
+      margin-bottom: 4px;
+      box-shadow: 0 1px 0 0 $c-dark-10;
+    }
+    .dropMenu-row {
+      height: 42px;
+      padding-left: 12px;
+      padding-right: 12px;
+
+      > div > div {
+        margin-right: 8px;
+      }
+      > img {
+        @include transition(all, $transition-default);
+        opacity: 0;
+      }
+      > span {
+        @include transition(all, $transition-default);
+        margin-right: 8px;
+        white-space: nowrap;
+      }
+      &:hover {
+        cursor: pointer;
+        color: $c-gray-600;
+        > img {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}

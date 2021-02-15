@@ -1,0 +1,174 @@
+.pc-container {
+  width: 100%;
+
+  @include mobile {
+    margin-top: 28px;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+.pc-composerPlaceholder {
+  @include border-radius(12px);
+  @include transition(all, $transition-default);
+
+  width: 100%;
+  height: 48px;
+
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-bottom: 20px;
+
+  background-color: #ebf3fb;
+  color: $c-gray-400;
+  &:hover {
+    cursor: pointer;
+    background-color: $c-gray-200;
+  }
+  &:active {
+    opacity: 0.85;
+  }
+}
+.pc {
+  @include border-radius(12px);
+  @include transition(all, $transition-default);
+
+  width: 100%;
+
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 28px;
+  padding-bottom: 28px;
+  margin-bottom: 20px;
+
+  background-color: white;
+  box-shadow: 0px 2px 4px rgba(100, 135, 166, 0.07),
+    0px 5px 15px rgba(100, 135, 166, 0.1);
+  transform: scale(1);
+
+  &:not(.onPostPage):hover {
+    cursor: pointer;
+    transform: scale(1.003);
+    box-shadow: 0px 2px 4px rgba(100, 135, 166, 0.1),
+      0px 5px 20px rgba(100, 135, 166, 0.15);
+    .pc--name:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &.onPostPage {
+    .left {
+      &:hover {
+        cursor: pointer;
+        .pc--name {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  .pc--comments,
+  .pc--pinBtn {
+    @include transition(all, $transition-default);
+    @include user-select(none);
+    @include border-radius(1000px);
+
+    padding-left: 12px;
+    padding-right: 12px;
+    height: 28px;
+
+    font-size: 14px;
+    font-weight: 600;
+    color: $c-gray-500;
+    background-color: $c-gray-200;
+
+    > svg {
+      margin-left: 8px;
+      height: 12px;
+      fill: currentColor;
+      width: 12px;
+    }
+    &.pinned {
+      color: white;
+      background-color: $c-gray-600;
+    }
+  }
+  .pc--pinBtn {
+    cursor: pointer;
+  }
+  .pc--pinIndicator {
+    @include transition(all, $transition-default);
+    @include user-select(none);
+    @include border-radius(1000px);
+
+    font-size: 14px;
+    font-weight: 500;
+    color: $c-gray-600;
+    background-color: $c-gray-200;
+
+    padding-left: 12px;
+    padding-right: 12px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+
+    span {
+      margin-left: 8px;
+    }
+  }
+  .pc--title {
+    > span {
+      font-size: 26px;
+      line-height: 24px;
+      font-weight: 700;
+      color: $c-gray-700;
+    }
+  }
+  .pc--content {
+    margin-top: 12px;
+    margin-bottom: 28px;
+    line-height: 24px;
+    font-size: 16px;
+    color: $c-gray-800;
+  }
+  .pc--bottom {
+    font-size: 14px;
+    font-weight: 600;
+    color: $c-gray-400;
+
+    @include mobile {
+      @include flex-direction(column);
+      @include justify-content(flex-start);
+      @include align-items(flex-start);
+      > div {
+        width: 100%;
+        &.right {
+          @include justify-content(space-between);
+          margin-top: 8px;
+        }
+      }
+    }
+  }
+  .pc--userPhoto {
+    @include border-radius(1000px);
+
+    height: 28px;
+    width: 28px;
+    margin-right: 8px;
+  }
+  .pc--name {
+    @include transition(all, $transition-default);
+    color: $c-gray-600;
+  }
+  .pc--time {
+    font-size: 12px;
+    font-weight: 400;
+    margin-top: -4px;
+  }
+  .pc--views {
+    font-weight: 400;
+    margin-right: 8px;
+  }
+  .pc--likes,
+  .pc--comments {
+    margin-left: 8px;
+  }
+}

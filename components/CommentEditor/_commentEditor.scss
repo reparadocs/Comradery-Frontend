@@ -1,0 +1,27 @@
+.commentEditor {
+  width: 100%;
+  margin-top: 16px;
+  .commentEditor-editor {
+    @include border-radius(4px);
+    @include transition(all, $transition-default);
+    background-color: $c-default-bg;
+    margin-bottom: 12px;
+  }
+  .commentEditor-footer {
+    width: 100%;
+    padding-bottom: 12px;
+  }
+  .footer-btn {
+    @include transition(all, $transition-default);
+    @include border-radius(4px);
+    background-color: $c-dark-100;
+    &:hover {
+      cursor: pointer;
+      opacity: 0.85;
+    }
+  }
+}
+
+.commentEditorContainer {
+  width: 100%;
+}

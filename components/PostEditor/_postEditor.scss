@@ -1,0 +1,27 @@
+.postEditor {
+  &-titleInput {
+    @include transition(all, $transition-default);
+    background-color: $inputs-bg-unfocused;
+    color: $c-dark-100;
+    border: 1px solid $c-dark-5;
+    &::placeholder {
+      color: $c-dark-25;
+    }
+    &:focus {
+      background-color: $inputs-bg-focused;
+      border: 1px solid $c-dark-25;
+    }
+  }
+  .postEditor-footer {
+    width: 100%;
+    margin-top: $top-padding-default;
+
+    .postEditor-footer-right {
+      flex: 1;
+      .savebtn {
+        background-color: $buttons-neutral-bg;
+        color: $buttons-neutral-text;
+      }
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "name": "Comradery",
+  "short_name": "Comradery",
+  "icons": [
+    {
+      "src": "/logo512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    },
+    {
+      "src": "/logo192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    }
+  ],
+  "background_color": "#FFFFFF",
+  "description": "A community platform :)",
+  "display": "fullscreen",
+  "start_url": "/",
+  "theme_color": "#ffffff"
+}

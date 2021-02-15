@@ -1,0 +1,67 @@
+.feedNav {
+  width: 100%;
+  margin-right: 24px;
+  position: relative;
+  z-index: 9;
+
+  @include mobile {
+    padding-left: 14px;
+  }
+
+  h1 {
+    font-size: 28px;
+    font-weight: 700;
+    color: $c-gray-700;
+  }
+}
+
+.feedNav.indexChannels {
+  h1 {
+    font-size: #{'min(2vw, 28px)'};
+  }
+}
+
+.feedNav-sort {
+  font-weight: 600;
+  color: $c-gray-400;
+
+  .on_desktop {
+    @include border-radius(1000px);
+    height: 36px;
+    padding-left: 14px;
+    padding-right: 8px;
+  }
+
+  @include mobile {
+    width: 100%;
+    @include justify-content(space-between);
+  }
+}
+
+.feedNav-mr {
+  margin-right: 28px;
+}
+
+.feedNav.wide {
+  margin-left: 0;
+  margin-right: 0;
+  width: 100%;
+}
+
+.channelSelector {
+  color: $c-gray-500;
+  font-weight: 600;
+
+  height: 36px;
+  padding-left: 8px;
+  padding-right: 8px;
+  @include border-radius(1000px);
+  display: none;
+
+  @include mobile {
+    @include flexbox;
+    @include flex-direction(column);
+    @include justify-content(center);
+    @include align-items(center);
+  }
+}

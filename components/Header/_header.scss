@@ -1,0 +1,50 @@
+.mHead {
+  background-color: #f9fcff;
+  z-index: 998;
+  position: fixed;
+  width: 100vw;
+
+  left: 0;
+  top: 0;
+
+  @include mobile {
+    display: none;
+  }
+
+  > header {
+    max-width: calc(1080px - 298px - 16px);
+    margin-left: 298px;
+    margin-right: 16px;
+    width: 100%;
+    padding-top: 24px;
+    padding-bottom: 20px;
+  }
+}
+
+.pHead {
+  width: 100%;
+  height: 36px;
+  margin-top: 84px;
+  margin-bottom: 20px;
+
+  @include mobile {
+    margin-bottom: 16px;
+    margin-top: 16px;
+    padding-right: 16px;
+  }
+
+  h1 {
+    font-weight: 700;
+    font-size: 36px;
+
+    color: $c-gray-600;
+  }
+
+  .pHead--nav {
+    display: none;
+    @include mobile {
+      display: block;
+      margin-left: 12px;
+    }
+  }
+}
