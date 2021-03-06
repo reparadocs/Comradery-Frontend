@@ -2,7 +2,7 @@ import moment from 'moment';
 
 export const API_PRODUCTION_URL = 'https://api.comradery.io/v1/';
 
-export const API_DEV_URL = 'https://localhost:8000';
+export const API_DEV_URL = 'http://localhost:8000/v1/';
 
 export const CHAT_PRODUCTION_URL =
   'https://comradery-spitfire.herokuapp.com/thestate';
